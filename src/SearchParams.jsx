@@ -27,8 +27,9 @@ const SearchParams = () => {
   }
 
   return (
-    <div className="search-params">
+    <div className="my-0 mx-auto w-11/12">
       <form
+        className="p-10 mb-10 rounded-lg bg-gray-200 shadow-lg flex flex-col justify-center items-center"
         onSubmit={(e) => {
           e.preventDefault();
           requestPets();
@@ -42,6 +43,7 @@ const SearchParams = () => {
             value={location}
             placeholder="Location"
             onChange={(e) => setLocation(e.target.value)}
+            className="w-60 mb-5 block"
           />
         </label>
         <label htmlFor="animal">
@@ -57,6 +59,7 @@ const SearchParams = () => {
               setAnimal(e.target.value);
               setBreed("");
             }}
+            className="w-60 mb-5 block"
           >
             <option></option>
             {ANIMALS.map((animal) => {
@@ -71,6 +74,7 @@ const SearchParams = () => {
         <label htmlFor="breed">
           Breed
           <select
+            disabled={!breeds.length}
             id="breed"
             value={breed}
             onChange={(e) => {
@@ -79,6 +83,7 @@ const SearchParams = () => {
             onBlur={(e) => {
               setBreed(e.target.value);
             }}
+            className="w-60 mb-5 block disabled:opacity-50"
           >
             <option></option>
             {breeds.map((breed) => {
@@ -96,6 +101,7 @@ const SearchParams = () => {
             value={theme}
             onChange={(e) => setTheme(e.target.value)}
             onBlur={(e) => setTheme(e.target.value)}
+            className="w-60 mb-5 block"
           >
             <option value="peru">Peru</option>
             <option value="pink">Pink</option>
@@ -104,7 +110,12 @@ const SearchParams = () => {
             <option value="salmon">Salmon</option>
           </select>
         </label>
-        <button style={{ backgroundColor: theme }}>Submit</button>
+        <button
+          className="rounded px-6 py-2 text-white hover:opacity-50 border-none"
+          style={{ backgroundColor: theme }}
+        >
+          Submit
+        </button>
       </form>
       <Results pets={pets} />
     </div>
