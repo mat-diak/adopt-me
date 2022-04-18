@@ -4,7 +4,7 @@
 
 import { expect, test } from "@jest/globals";
 import { render } from "@testing-library/react";
-import Carousel from "../Carousel";
+import Carousel from "../Carousel.jsx";
 
 test("lets users click on thumbnails to make them the hero image", async () => {
   const images = ["1.jpg", "2.png", "3.webm"];
