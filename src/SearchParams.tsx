@@ -1,8 +1,8 @@
 import { useState, useEffect, useContext, FunctionComponent } from "react";
-import useBreedList from "./useBreedList.jsx";
+import useBreedList from "./useBreedList";
 import Results from "./Results";
-import ThemeContext from "./ThemeContext.jsx";
-import { PetAPIResponse, Animal, Pet } from "./APIResponsesTypes.js";
+import ThemeContext from "./ThemeContext";
+import { PetAPIResponse, Animal, Pet } from "./APIResponsesTypes";
 
 const ANIMALS: Animal[] = ["bird", "cat", "dog", "rabbit", "reptile"];
 
