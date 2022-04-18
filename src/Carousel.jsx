@@ -21,7 +21,7 @@ class Carousel extends Component {
 
     return (
       <div className="carousel">
-        <img src={images[active]} alt="animal" />
+        <img src={images[active]} alt="animal" data-testid="main-image" />
         <div className="carousel-smaller">
           {images.map((photo, index) => {
             return (
@@ -33,6 +33,7 @@ class Carousel extends Component {
                 key={photo}
                 className={index === active ? "active" : ""}
                 alt="animal thumbnail"
+                data-testid={`thumbnails-${index}`}
               />
             );
           })}
