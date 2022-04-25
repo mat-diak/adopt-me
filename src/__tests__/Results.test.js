@@ -4,7 +4,7 @@
 
 import { expect, test } from "@jest/globals";
 import { create } from "react-test-renderer";
-import Results from "../Results";
+import Results from "../Results.jsx";
 import { createRenderer } from "react-test-renderer/shallow";
 
 const pets = [
